@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.10.1)
+
+#=== Set name of our project
+project(project2)
+
+#=== Locate the ROOT package and defines a number of variables (e.g. ROOT_INCLUDE_DIRS)
+list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
+find_package(ROOT 6)
+
+#=== Define useful ROOT functions and macros (e.g. ROOT_GENERATE_DICTIONARY)
+include(${ROOT_USE_FILE})
+
+#=== Find all source files in a directory
+aux_source_directory(./src SOURCE_FILES)
+
+#=== Generate ROOT dictionary
+include_directories(. ${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(. ${CMAKE_CURRENT_SOURCE_DIR}/include/H2)
+
+#=== Create a shared library with geneated dictionary
+set( LIBRARY_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build/lib" )
+add_library( project2 SHARED ${SOURCE_FILES})
+target_link_libraries( project2 ${ROOT_LIBRARIES} )
+
+#=== Create  a main program using the library
+set( EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build/scripts" )
+add_executable( main ${CMAKE_CURRENT_SOURCE_DIR}/scripts/main.cxx )
+target_link_libraries( main project2 ${ROOT_LIBRARIES} )
+
+#=== Create  a main program using the library
+set( EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/build/scripts" )
+add_executable( visualizations ${CMAKE_CURRENT_SOURCE_DIR}/scripts/visualizations.cxx )
+target_link_libraries( visualizations project2 ${ROOT_LIBRARIES} )

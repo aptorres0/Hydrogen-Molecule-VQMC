@@ -1,0 +1,6 @@
+/Users/ajpt/Documents/School/PHYS 7411 - Computational/dev/Project-2-Clean/build/CMakeFiles/project2.dir
+/Users/ajpt/Documents/School/PHYS 7411 - Computational/dev/Project-2-Clean/build/CMakeFiles/main.dir
+/Users/ajpt/Documents/School/PHYS 7411 - Computational/dev/Project-2-Clean/build/CMakeFiles/vqmc.dir
+/Users/ajpt/Documents/School/PHYS 7411 - Computational/dev/Project-2-Clean/build/CMakeFiles/test.dir
+/Users/ajpt/Documents/School/PHYS 7411 - Computational/dev/Project-2-Clean/build/CMakeFiles/edit_cache.dir
+/Users/ajpt/Documents/School/PHYS 7411 - Computational/dev/Project-2-Clean/build/CMakeFiles/rebuild_cache.dir
